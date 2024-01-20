@@ -24,7 +24,7 @@ function createGrid(){
 }
 
 function createGridChoice(gridSize){
-
+    
     for(let i = 1; i < gridSize+1; i++){
         const rowContainer = document.createElement('div');
         
@@ -48,7 +48,14 @@ function createGridChoice(gridSize){
 }
 
 createGrid()
-// while(mainContainer.firstChild){
-//     mainContainer.removeChild(mainContainer.lastChild);
-// }
-// createGridChoice(5)
+const theGridSetter = document.querySelector('#theGridSetter');
+
+theGridSetter.addEventListener('click', () => {
+    let dimension = prompt('What dimensions would you like');
+    while(mainContainer.firstChild){
+        mainContainer.removeChild(mainContainer.lastChild);
+    }
+    let x = parseInt(dimension)
+    createGridChoice(x)
+});
+
